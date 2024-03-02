@@ -11,20 +11,10 @@ const server = createServer((req, res) => {
     res.writeHead(200, { "Content-Type": "text/plain" });
     res.end("Chat en tiempo real!\n");
 });
-// Inicializamos una nueva instancia de socket.io utilizando el servidor HTTP
-// const io = new Server(server, {
-//     cors: {
-//         // CUANDO SUBAMOS EL SERVER CAMBIAR VALOR DE 'origin' A '*'
-//         // DE ESTE MODO ACEPTA CUALQUIER URL POR LA QUE SALGA
-//         // origin; "*",
-//         // ESTE ES EL PUERTO DESDE EL QUE LEE EL CLIENTE QUE SE CONECTE
-//         origin: "*",
-//         methods: ["GET", "POST"]
-//     }
-// });
+
 const io = new Server(server, {
     cors: {
-        origin: "*", // Permitir cualquier origen (asegúrate de que Render también permita esto)
+        origin: "*",
         methods: ["GET", "POST"]
     }
 });
@@ -42,14 +32,11 @@ io.on("connection", (socket) => {
         console.log("Usuario desconectado!");
     });
 });
-// El servidor comienza a escuchar en el puerto 3000 (MODO LOCAL)
-// server.listen(3000, () => {
-//     console.log("Servidor corriendo en http://localhost:3000");
-// });
 
 const PORT = process.env.PORT || 3000;
+
 // USAMOS ESTE ESCUCHADOR DEL SERVIDOR PARA MODO ONLINE
 server.listen(PORT, () => {
-    console.log("Servidor corriendo en http://localhost:3000"); 
+    console.log('Servidor corriendo en http://localhost:${PORT}'); 
 });
 export default { server, io };
