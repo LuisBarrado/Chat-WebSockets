@@ -37,6 +37,6 @@ const PORT = process.env.PORT || 3000;
 
 // USAMOS ESTE ESCUCHADOR DEL SERVIDOR PARA MODO ONLINE
 server.listen(PORT, () => {
-    console.log('Servidor corriendo en http://localhost:${PORT}'); 
+    console.log(`Servidor corriendo en http://localhost:${PORT}`); 
 });
 export default { server, io };
