@@ -53,7 +53,7 @@
         $(function () {
             // AQUI TENEMOS QUE CAMBIAR EL STRING DENTRO DE 'io'
             // POR LA URL PROPORCINADA POR EL HOSTING DEL SERVIDOR
-            const socket = io("http://localhost:3000");
+            const socket = io("https://chat-websockets-7.onrender.com");
             $("#form").submit(function (event) {
                 event.preventDefault();
                 socket.emit("Mensaje de chat", $("#input").val());
