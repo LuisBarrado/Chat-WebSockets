@@ -12,13 +12,19 @@ const server = createServer((req, res) => {
     res.end("Chat en tiempo real!\n");
 });
 // Inicializamos una nueva instancia de socket.io utilizando el servidor HTTP
+// const io = new Server(server, {
+//     cors: {
+//         // CUANDO SUBAMOS EL SERVER CAMBIAR VALOR DE 'origin' A '*'
+//         // DE ESTE MODO ACEPTA CUALQUIER URL POR LA QUE SALGA
+//         // origin; "*",
+//         // ESTE ES EL PUERTO DESDE EL QUE LEE EL CLIENTE QUE SE CONECTE
+//         origin: "*",
+//         methods: ["GET", "POST"]
+//     }
+// });
 const io = new Server(server, {
     cors: {
-        // CUANDO SUBAMOS EL SERVER CAMBIAR VALOR DE 'origin' A '*'
-        // DE ESTE MODO ACEPTA CUALQUIER URL POR LA QUE SALGA
-        // origin; "*",
-        // ESTE ES EL PUERTO DESDE EL QUE LEE EL CLIENTE QUE SE CONECTE
-        origin: "*",
+        origin: "*", // Permitir cualquier origen (asegúrate de que Render también permita esto)
         methods: ["GET", "POST"]
     }
 });
