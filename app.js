@@ -37,9 +37,9 @@ io.on("connection", (socket) => {
     });
 });
 // El servidor comienza a escuchar en el puerto 3000 (MODO LOCAL)
-server.listen(3000, () => {
-    console.log("Servidor corriendo en http://localhost:3000");
-});
+// server.listen(3000, () => {
+//     console.log("Servidor corriendo en http://localhost:3000");
+// });
 
 const PORT = process.env.PORT || 3000;
 // USAMOS ESTE ESCUCHADOR DEL SERVIDOR PARA MODO ONLINE
