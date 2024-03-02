@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "socket.io": "^4.7.4"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "Chat App WebSockets",
+  "main": "app.js",
+  "type": "module",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
